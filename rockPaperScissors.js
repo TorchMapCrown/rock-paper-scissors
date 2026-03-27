@@ -39,6 +39,18 @@ function getHumanChoice() {
     return result;
 }
 
+function determineWinner(humanFinalScore, computerFinalScore) {
+    let winner = ""
+    if (humanFinalScore > computerFinalScore) {
+        winner = "Human"
+    } else if (humanFinalScore < computerFinalScore) {
+        winner = "Computer"
+    } else if (humanFinalScore == computerFinalScore) {
+        winner = "Nobody"
+    }
+    console.log(winner + " wins the game.")
+}
+
 function playGame() {
     // initializes score at 0
     let humanScore = 0;
@@ -75,7 +87,7 @@ function playGame() {
                 console.log("Human wins.");
                 humanScore = ++humanScore;
             } else if (computerChoice == scissors) {
-                print("It's a draw.")
+                console.log("It's a draw.")
             }
         }
         // displays post-round score
@@ -88,6 +100,7 @@ function playGame() {
     playRound(getHumanChoice(), getComputerChoice(1, 3))
     playRound(getHumanChoice(), getComputerChoice(1, 3))
     playRound(getHumanChoice(), getComputerChoice(1, 3))
+    determineWinner(humanScore, computerScore)
 }
 
 playGame()
