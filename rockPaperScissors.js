@@ -7,7 +7,7 @@ function getComputerChoice(min, max) {
     let minCeil = Math.ceil(min);
     let maxFloor = Math.floor(max);
     let roll = Math.floor(Math.random() * (maxFloor - minCeil + 1) + minCeil);
-    console.log("computer roll result: " + roll)
+    console.log("computer roll: " + roll)
 
     let result = "";
     // turns roll into a string to be stored in result
@@ -18,6 +18,7 @@ function getComputerChoice(min, max) {
     } else if (roll === 3) {
         result = scissors;
     }
+    console.log("computer chose: " + result)
 
     return result;
 }
@@ -35,6 +36,8 @@ function getHumanChoice() {
     } else if (input.toLowerCase() == scissors) {
         result = scissors;
     }
+
+    console.log("user choice: " + result)
 
     return result;
 }
